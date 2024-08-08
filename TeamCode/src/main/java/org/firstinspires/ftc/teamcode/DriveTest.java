@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 @TeleOp
 public class DriveTest extends OpMode {
 
-    double speed = 0.2;
+    double speed = 0.5;
     //Declare Objects
     DcMotor backLeft;
     DcMotor frontLeft;
@@ -25,6 +25,7 @@ public class DriveTest extends OpMode {
     @Override
     public void loop() {
         // Use gamepad input to control motor
+        speed=gamepad1.left_stick_x;
         if(gamepad1.y){
             backLeft.setPower(-speed);
             frontLeft.setPower(-speed);
@@ -37,6 +38,32 @@ public class DriveTest extends OpMode {
             frontLeft.setPower(speed);
             frontRight.setPower(-speed);
             backRight.setPower(-speed);
+        }
+
+        else if(gamepad1.x){
+            backLeft.setPower(-speed);
+            frontLeft.setPower(speed);
+            frontRight.setPower(speed);
+            backRight.setPower(-speed);
+        }
+        else if(gamepad1.b){
+            backLeft.setPower(speed);
+            frontLeft.setPower(-speed);
+            frontRight.setPower(-speed);
+            backRight.setPower(speed);
+
+        }
+        else if(gamepad1.dpad_right){
+            backLeft.setPower(-speed);
+            frontLeft.setPower(-speed);
+            frontRight.setPower(-speed);
+            backRight.setPower(-speed);
+        }
+        else if(gamepad1.dpad_left){
+            backLeft.setPower(speed);
+            frontLeft.setPower(speed);
+            frontRight.setPower(speed);
+            backRight.setPower(speed);
         }
 
         else{
