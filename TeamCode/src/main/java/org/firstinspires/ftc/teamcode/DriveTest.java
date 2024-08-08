@@ -38,6 +38,7 @@ public class DriveTest extends OpMode {
             frontRight.setPower(-speed);
             backRight.setPower(-speed);
         }
+
         else{
             //set power back to zero
             backLeft.setPower(0);
