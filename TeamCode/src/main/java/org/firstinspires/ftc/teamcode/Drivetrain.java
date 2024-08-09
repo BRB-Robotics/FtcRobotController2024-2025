@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 @TeleOp
 public class Drivetrain extends OpMode {
 
-    double speed = 0.5;
+    double speed = 0.25;
     //Declare objects
 
 
