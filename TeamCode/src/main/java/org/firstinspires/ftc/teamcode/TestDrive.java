@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 @TeleOp
-public class DriveTest extends OpMode {
+public class TestDrive extends OpMode {
 
     double speed = 0.5;
     //Declare Objects
@@ -66,12 +66,13 @@ public class DriveTest extends OpMode {
             backRight.setPower(speed);
         }
 
-        else{
+        else {
             //set power back to zero
             backLeft.setPower(0);
             frontLeft.setPower(0);
             frontRight.setPower(0);
             backRight.setPower(0);
+        }
         if(gamepad1.a){
             backLeft.setPower(0.22);
             frontLeft.setPower(0.22);
