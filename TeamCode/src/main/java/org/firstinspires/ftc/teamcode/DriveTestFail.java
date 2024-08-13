@@ -27,14 +27,7 @@ public class DriveTestFail extends OpMode {
 
     @Override
     public void loop() {
-        if (gamepad1.left_bumper || gamepad2.left_bumper) {
-
-            backLeft.setPower(0);
-            frontLeft.setPower(0);
-            frontRight.setPower(0);
-            backRight.setPower(0);
-        }
-        else {
+        if (gamepad2.right_trigger || gamepad1.right_trigger) {
             double speedx = (gamepad1.left_stick_x) * 3;
             double speedy = (gamepad1.left_stick_y) * 3;
             backLeft.setPower(speedy);
@@ -73,7 +66,93 @@ public class DriveTestFail extends OpMode {
             frontRight.setPower(-turnx2);
             backRight.setPower(-turnx2);
 
+        } else if (gamepad1.right_trigger) {
+            double speedx = (gamepad1.left_stick_x) * 3;
+            double speedy = (gamepad1.left_stick_y) * 3;
+            backLeft.setPower(speedy);
+            frontLeft.setPower(speedy);
+            frontRight.setPower(-speedy);
+            backRight.setPower(-speedy);
+            backLeft.setPower(speedx);
+            frontLeft.setPower(-speedx);
+            frontRight.setPower(-speedx);
+            backRight.setPower(speedx);
+            double turnx = (gamepad1.right_stick_x);
+            backLeft.setPower(-turnx);
+            frontLeft.setPower(-turnx);
+            frontRight.setPower(-turnx);
+            backRight.setPower(-turnx);
+            if (gamepad1.left_bumper) {
+
+                backLeft.setPower(0);
+                frontLeft.setPower(0);
+                frontRight.setPower(0);
+                backRight.setPower(0);
+            }
+            double speedx2 = (gamepad2.left_stick_x) * 2;
+            double speedy2 = (gamepad2.left_stick_y) * 2;
+            backLeft.setPower(speedy2);
+            frontLeft.setPower(speedy2);
+            frontRight.setPower(-speedy2);
+            backRight.setPower(-speedy2);
+            backLeft.setPower(speedx2);
+            frontLeft.setPower(-speedx2);
+            frontRight.setPower(-speedx2);
+            backRight.setPower(speedx2);
+            double turnx2 = (gamepad2.right_stick_x);
+            backLeft.setPower(-turnx2);
+            frontLeft.setPower(-turnx2);
+            frontRight.setPower(-turnx2);
+            backRight.setPower(-turnx2);
+
+        } else {
+            if (gamepad1.left_bumper || gamepad2.left_bumper) {
+
+                backLeft.setPower(0);
+                frontLeft.setPower(0);
+                frontRight.setPower(0);
+                backRight.setPower(0);
+            } else {
+                double speedx = (gamepad1.left_stick_x) * 3;
+                double speedy = (gamepad1.left_stick_y) * 3;
+                backLeft.setPower(speedy);
+                frontLeft.setPower(speedy);
+                frontRight.setPower(-speedy);
+                backRight.setPower(-speedy);
+                backLeft.setPower(speedx);
+                frontLeft.setPower(-speedx);
+                frontRight.setPower(-speedx);
+                backRight.setPower(speedx);
+                double turnx = (gamepad1.right_stick_x);
+                backLeft.setPower(-turnx);
+                frontLeft.setPower(-turnx);
+                frontRight.setPower(-turnx);
+                backRight.setPower(-turnx);
+                if (gamepad1.left_bumper) {
+
+                    backLeft.setPower(0);
+                    frontLeft.setPower(0);
+                    frontRight.setPower(0);
+                    backRight.setPower(0);
+                }
+                double speedx2 = (gamepad2.left_stick_x) * 2;
+                double speedy2 = (gamepad2.left_stick_y) * 2;
+                backLeft.setPower(speedy2);
+                frontLeft.setPower(speedy2);
+                frontRight.setPower(-speedy2);
+                backRight.setPower(-speedy2);
+                backLeft.setPower(speedx2);
+                frontLeft.setPower(-speedx2);
+                frontRight.setPower(-speedx2);
+                backRight.setPower(speedx2);
+                double turnx2 = (gamepad2.right_stick_x);
+                backLeft.setPower(-turnx2);
+                frontLeft.setPower(-turnx2);
+                frontRight.setPower(-turnx2);
+                backRight.setPower(-turnx2);
+            }
         }
+
     }
 
 
