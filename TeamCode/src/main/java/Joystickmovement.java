@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.Servo;
 
 
 
@@ -13,6 +14,8 @@ public class Joystickmovement extends OpMode {
     DcMotor frontLeft;
     DcMotor frontRight;
     DcMotor backRight;
+    Servo clawLeft;
+    Servo clawRight;
 
     @Override
     public void init() {
@@ -21,6 +24,9 @@ public class Joystickmovement extends OpMode {
         frontLeft = hardwareMap.get(DcMotor.class, "front left");
         frontRight = hardwareMap.get(DcMotor.class, "front right");
         backRight = hardwareMap.get(DcMotor.class, "back right");
+        clawLeft = hardwareMap.get(Servo.class,"claw left" );
+        clawRight = hardwareMap.get(Servo.class,"claw right" );
+
 
     }
 
@@ -72,6 +78,9 @@ public class Joystickmovement extends OpMode {
             frontLeft.setPower(-turnx2);
             frontRight.setPower(-turnx2);
             backRight.setPower(-turnx2);
+
+        }
+        if(gamepad1.a) {
 
         }
     }
